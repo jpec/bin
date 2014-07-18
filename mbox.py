@@ -4,9 +4,9 @@ import mailbox
 import os
 import sys
 
-def open_mbox(path):
-    if os.path.isfile("/var/mail/"+path):
-        mbox = mailbox.mbox("/var/mail/"+path)
+def open_mbox(box):
+    if os.path.isfile("/var/mail/"+box):
+        mbox = mailbox.mbox("/var/mail/"+box)
         mbox.lock()
         return(mbox)
     else:
