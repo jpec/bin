@@ -19,8 +19,7 @@ def close_mbox(mbox):
     return(True)
 
 def treat_message(message):
-    print(message['from'])
-    if message['from'] == 'fail2ban@peclu.net':
+    if message['from'] == 'Fail2Ban <fail2ban@peclu.net>':
         return(message['date'] + " - " + message['subject'])
     else:
         return(None)
@@ -39,7 +38,7 @@ def main(args):
         if mbox:
             f2b_messages = reading_messages(mbox)
             close_mbox(mbox)
-            print("Nb unread mail(s):", len(f2b_messages))
+            print("Nb of ban(s):", len(f2b_messages))
             for message in f2b_messages:
                 print(">", message)
         else:
