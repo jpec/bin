@@ -19,6 +19,7 @@ def close_mbox(mbox):
     return(True)
 
 def treat_message(message):
+    print(message['from'])
     if message['from'] == 'fail2ban@peclu.net':
         return(message['date'] + " - " + message['subject'])
     else:
