@@ -35,7 +35,7 @@ def reading_messages(mbox):
 def main(args):
     if len(args) == 2:
         mbox = open_mbox(args[1])
-        if os.path.isfile(mbox):
+        if mbox:
             f2b_messages = reading_messages(mbox)
             close_mbox(mbox)
             print("Nb unread mail(s):", len(f2b_messages))
