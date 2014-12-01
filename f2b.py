@@ -20,7 +20,7 @@ def close_mbox(mbox):
 
 def treat_message(message):
     if message['from'] == 'Fail2Ban <fail2ban@peclu.net>':
-        return(message['date'] + " - " + message['subject'].replace("[Fail2Ban] ssh: banned ", ""))
+        return(str(message['date']) + " - " + str(message['subject']).replace("[Fail2Ban] ssh: banned ", ""))
     else:
         return(None)
 
