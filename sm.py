@@ -17,6 +17,12 @@ def get_date():
     else:
         return(None)
 
+def get_users():
+    if len(sys.argv) >= 3:
+        return(sys.argv[2:])
+    else:
+        return(USERS)
+
 def print_sitemap(date, users):
     print(XMLHEAD)
     for user in users:
@@ -28,8 +34,9 @@ def print_sitemap(date, users):
 def main():
     date = get_date()
     if date:
-        print_sitemap(date, USERS)
+        users = get_users()
+        print_sitemap(date, users)
     else:
-        print("Usage: {0} <date>".format(sys.argv[0]))
+        print("Usage: {0} <date> [user…]".format(sys.argv[0]))
 
 main()
