@@ -12,7 +12,7 @@ USERS = ["peclu", "pimp", "raspyplayer", "gunsmith", "julien"]
 
 
 def get_date():
-    if len(sys.argv) == 2 and len(sys.argv[1]) == 10:
+    if len(sys.argv) >= 2 and len(sys.argv[1]) == 10:
         return(sys.argv[1])
     else:
         return(None)
